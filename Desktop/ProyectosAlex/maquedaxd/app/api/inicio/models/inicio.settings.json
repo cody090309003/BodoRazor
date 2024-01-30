@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "inicios",
+  "info": {
+    "name": "inicio",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "NO1": {
+      "type": "string"
+    },
+    "imagenes": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "NO2": {
+      "type": "string"
+    }
+  }
+}

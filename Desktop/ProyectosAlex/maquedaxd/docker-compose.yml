@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  # Servicio de Strapi
+  strapi:
+    image: strapi/strapi:latest  # Utilizamos la imagen oficial de Strapi
+    container_name: my_strapi_container
+    environment:
+      DATABASE_CLIENT: mongodb  # Indicamos que estamos utilizando MongoDB
+      DATABASE_NAME: mydatabase  # Nombre de la base de datos de Strapi
+      DATABASE_HOST: mongodb  # Nombre del servicio de MongoDB (el mismo que se define a continuación)
+      DATABASE_PORT: 27017
+      DATABASE_USERNAME: myuser  # Nombre de usuario de la base de datos MongoDB
+      DATABASE_PASSWORD: mypassword  # Contraseña de la base de datos MongoDB
+      NODE_ENV: production  # Configuración de entorno (puedes ajustarla según tus necesidades)
+    ports:
+      - "1337:1337"  # Mapeo de puertos (puerto del contenedor:puerto del host)
+    volumes:
+      - ./app:/srv/app  # Montamos la aplicación Strapi en el contenedor
+    depends_on:
+      - mongodb  # Dependencia en el servicio MongoDB
+
+  # Servicio de MongoDB
+  mongodb:
+    image: mongo:latest  # Utilizamos la imagen oficial de MongoDB
+    container_name: my_mongodb_container
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: myuser  # Nombre de usuario de MongoDB
+      MONGO_INITDB_ROOT_PASSWORD: mypassword  # Contraseña de MongoDB
+    ports:
+      - "27017:27017"  # Mapeo de puertos (puerto del contenedor:puerto del host)
+    volumes:
+      - ./mongo-data:/data/db  # Montamos el almacenamiento de datos de MongoDB
