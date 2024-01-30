@@ -1,0 +1,201 @@
+.header-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.menu-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  /* Ajusta la altura según sea necesario */
+}
+
+.header-title {
+  text-align: center;
+  font-weight: lighter; /* Haz la fuente más delgada */
+
+  /* Centra el título en todas las pantallas */
+}
+
+.header-nav a {
+  margin: 0;
+  /* Reducir el margen entre elementos */
+}
+.nav-link {
+display: block;
+padding: 0.5rem 3rem;
+color: #f8f9fa;
+font-family: 'Roboto';
+font-family: system-ui;
+font-weight: 100;
+font-size: 85%;
+
+
+
+}
+
+@media (max-width:576px) {
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+    z-index: 2;
+    /* Asegura que el menú hamburguesa esté por encima del contenido */
+    font-size: 1.5rem;
+    /* Tamaño del icono del menú hamburguesa */
+    color: #343a40;
+    /* Color del icono del menú hamburguesa */
+  }
+
+  .menu-toggle:hover {
+    color: #3e3f41;
+    /* Cambia el color al pasar el ratón sobre el icono */
+  }
+
+  .header-title {
+    margin-bottom: 10px;
+    /* Ajusta el espacio entre el título y la barra de navegación */
+  }
+
+  .header-nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #000000;
+    width: 100%;
+    z-index: 1;
+    /* Ajusta el z-index según sea necesario */
+  }
+
+  .menu-toggle.open {
+    color: #ffffff;
+  }
+
+  .header-nav.open {
+    display: flex;
+    z-index: 2;
+    
+    /* Asegura que el menú hamburguesa esté por encima del contenido */
+  }
+
+  .menu-container {
+    justify-content: center;
+  }
+
+  .header-nav a {
+    text-align: center;
+    padding: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 1px solid #343a40;
+    margin: 0;
+    /* Reducir el margen entre elementos */
+    margin-bottom: 10px;
+    /* Ajusta el espacio entre los enlaces en dispositivos móviles */
+    font-size: 1.2em;
+    /* Tamaño del texto de los enlaces en dispositivos móviles */
+    color: #343a40;
+    /* Color del texto de los enlaces en dispositivos móviles */
+    transition: color 0.3s;
+    /* Agrega una transición de color para una animación suave al pasar el ratón sobre los enlaces */
+   
+  }
+
+  .header-nav a:hover {
+    color: #ffffff;
+    /* Cambia el color al pasar el ratón sobre los enlaces */
+  }
+
+  .overlay {
+  
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  
+    background: rgba(0, 0, 0, 0.5);
+
+  }
+  
+
+
+}
+
+@media (min-width:577px) and (max-width:800px) {
+  
+}
+
+@keyframes slideIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.header-nav a {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: slideIn 0.5s forwards;
+}
+
+.header-nav a:nth-child(1) {
+  animation-delay: 0.3s;
+}
+
+.header-nav a:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.header-nav a:nth-child(3) {
+  animation-delay: 0.5s;
+}
+.header-nav a:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+/* Agrega más selectores nth-child según la cantidad de enlaces que tengas */
+.header-nav a {
+  position: relative;
+  color: #b6b6b6; /* Color original del texto */
+  transition: color 0.3s ease; /* Agrega una transición para el cambio de color */
+}
+
+.header-nav a::after {
+  content: '';
+  display: block;
+  width: 0;
+  top: 30px;
+  height: 0.5px;
+  background-color: #2b2b2b;
+  position: absolute;
+  bottom: -5px; /* Ajusta la distancia entre la línea y el título */
+  left: 50%;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+  opacity: 0;
+}
+.header-nav a:hover {
+  color: white; /* Cambia "yourDesiredColor" al color que desees al pasar el ratón */
+}
+
+.header-nav a:hover::after {
+  width: 50%;
+  opacity: 1;
+  background-color:#f8f9fa; /* Cambia "yourDesiredColor" al color que desees al pasar el ratón */
+}
+
+
+
+

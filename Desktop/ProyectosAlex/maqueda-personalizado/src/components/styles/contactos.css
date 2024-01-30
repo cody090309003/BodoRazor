@@ -1,0 +1,83 @@
+/* contactos.css */
+.contactoT{
+  margin-top: 0px; /* Ajusta este valor según tus necesidades */
+  font-weight: 300; /* Grosor de la fuente para el título */
+}
+.contact-container {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 15px;
+  border: 1px solid #181818;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  font-size: 12px; /* Tamaño de fuente para el contenedor principal */
+  font-weight: 300; /* Grosor de la fuente para el contenedor principal */
+  color: #fff; /* Color del texto para el contenedor principal */
+
+}
+
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+label {
+  margin-top: 20px;
+  font-weight: 200;
+  margin-bottom: 6px;
+  font-size: 12px; /* Tamaño de fuente para las etiquetas */
+  color: #fff; /* Color del texto para las etiquetas */
+
+}
+
+.input-group {
+  position: relative;
+  width: 100%; /* Ajusta según tus necesidades */
+}
+
+input,
+textarea {
+  padding: 6px;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #181818; /* Línea debajo del campo de entrada */
+  border-radius: 1px;
+  margin-bottom: 4px;
+  background-color: transparent; /* Fondo transparente */
+  font-size: 8px; /* Tamaño de fuente para los campos de entrada */
+  color: #fff; /* Color del texto para los campos de entrada */
+}
+
+/* Estilo adicional para el seudoelemento ::before */
+.input-group::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px; /* Altura de la línea */
+  background-color: #181818; /* Color de la línea */
+}
+
+button {
+  background-color: #131313;
+  color: #fff;
+  padding: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 12px; /* Tamaño de fuente para el botón */
+  font-weight: 300; /* Grosor de la fuente para el botón */
+}
+
+button:hover {
+  background-color: #0e0e0e;
+}
+div.form-group{
+  width: 400px;
+}

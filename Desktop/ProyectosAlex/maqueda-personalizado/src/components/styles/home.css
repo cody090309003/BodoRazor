@@ -1,0 +1,195 @@
+/* Home.css */
+
+body {
+  margin: 0;
+  background-color: black;
+  color: white;
+}
+
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+.hero {
+  position: relative;
+}
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  animation: fadeIn 8s;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* El overlay abarcará todo el ancho de la imagen */
+  height: 100%; /* El overlay abarcará toda la altura de la imagen */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 4; /* Ajusta el valor según sea necesario */
+  background: rgba(0, 0, 0, 0.5); /* Overlay oscuro */
+  animation: fadeIn 2s;
+}
+
+.text-box {
+  color: #fff; /* Texto blanco */
+  text-align: center;
+
+}
+
+.text-box h1 {
+  font-size: 1.7rem;
+  font-weight: 100;
+  margin-bottom: 20px;
+  animation: slideDown 2s;
+}
+
+.text-box p {
+  font-size: 0.7rem;
+  margin-bottom: 20px;
+  animation: slideDown 3s;
+}
+
+.text-box button {
+  background-color: #293129; /* Verde */
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 0.5rem;
+  border: none;
+  cursor: pointer;
+  animation: slideDown 5s;
+}
+
+.text-box button:hover {
+  background-color: #000000; /* Verde más oscuro al pasar el ratón */
+}
+
+.cards {
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+ 
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.card {
+  grid-area: image;
+}
+
+.card {
+  width: 200px;
+  height: 300px;
+  border: 1px solid #0e0e0e;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: #0e0e0e center/cover no-repeat; 
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+  position: relative; /* Agregado para posicionar el contenido de la tarjeta de manera absoluta */
+
+}
+
+.image {
+  grid-area: image;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  background-size: cover;
+  width: 100%; /* Asegura que la imagen ocupe todo el ancho de la tarjeta */
+  
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card h3 {
+  text-align: center;
+  font-size: 0.7rem ;
+  margin-bottom: 8px;
+  margin-top: 30px;
+  font-weight: 50%;
+  font-family: 'Roboto';
+}
+
+.card p {
+  font-size: 0.6rem;
+  color: #999;
+  margin: 0;
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 100px;
+
+}
+
+.card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.5); 
+  color: white;
+  text-align: center; /* Centra el texto */
+  font-size: 0.8rem; /* Tamaño de letra más pequeño */
+}
+
+/* home.css */
+
+.hero .image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Agrega transiciones de 0.5 segundos a la opacidad y transform */
+}
+
+.hero .image-container img.fade-out {
+  opacity: 0;
+  transform: translateX(20px); /* Mueve la imagen hacia la derecha durante la transición de desvanecimiento */
+}
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 3;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.card {
+  animation: fadeIn 3s ease-in;
+}
+
+

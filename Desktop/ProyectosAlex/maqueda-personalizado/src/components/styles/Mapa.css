@@ -1,0 +1,8 @@
+.leaflet-map {
+    height: 200px;
+    width: 50%;
+    border: 0px solid #ccc;
+    margin-top: 20px;  /* Añade espacio entre el mapa y el contenido superior (encabezado) */
+    margin-bottom: 20px;  /* Añade espacio entre el mapa y el contenido inferior (pie de página) */
+  }
+  
